@@ -36,6 +36,7 @@ exports.createNewTodo = async (req, res) => {
 
 // Get All Todos
 exports.getAllTodos = async (req, res) => {
+    console.log('/////////////////////')
     let status, message, data;
     try {
         const allTodos = await TodoModel.find();

@@ -40,6 +40,7 @@ exports.getAllTodos = async (req, res) => {
     let status, message, data;
     try {
         const allTodos = await TodoModel.find();
+        console.log('allTodos', allTodos)
         if (allTodos) {
             status = 200;
             message = "Recored Found!";

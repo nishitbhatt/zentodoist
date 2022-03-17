@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 const cros = require("cors");
+const {port} = require("./config");
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -10,7 +11,6 @@ app.use(cros());
 
 const dotenv = require('dotenv');
 dotenv.config();
-const PORT = process.env.PORT || 3000;
 
 require("./app/connection");
 
@@ -29,6 +29,6 @@ app.use(function (req, res, next) {
 // Todo Routes
 app.use('/todo', jsonParser, todoRoutes);
 
-app.listen(PORT, () => {
-    console.log('Server is running....', PORT)
+app.listen(port, () => {
+    console.log('Server is running....', port)
 })

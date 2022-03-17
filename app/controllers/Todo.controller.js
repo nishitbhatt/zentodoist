@@ -40,6 +40,7 @@ exports.getAllTodos = async (req, res) => {
     console.log('/////////////////////')
     let status, message, data;
     try {
+        console.log('try')
         const allTodos = await TodoModel.find();
         console.log('allTodos', allTodos)
         if (allTodos) {
@@ -48,6 +49,7 @@ exports.getAllTodos = async (req, res) => {
             data = allTodos;
         }
     } catch (error) {
+        console.log('catch')
         status = 404;
         message = "Error : " + error;
         data = null;

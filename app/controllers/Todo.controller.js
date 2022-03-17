@@ -8,6 +8,7 @@ exports.demoMethods = async (req, res) => {
 // Create New Todo
 exports.createNewTodo = async (req, res) => {
     let status, message, data = [];
+    console.log(req.body)
     if (req.body.title) {
 
         try {
